@@ -1,0 +1,1119 @@
+{
+	"id": "7bec25e8-57b3-4862-bf5a-37e44ee0135a",
+	"name": "PetFriends(negative-code)",
+	"timestamp": "2023-11-13T19:38:57.332Z",
+	"collection_id": "24878696-b6588aac-9e61-4f81-b5d4-59439436a8f4",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 18,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-11-13T19:38:50.597Z",
+	"totalFail": 19,
+	"results": [
+		{
+			"id": "d18bb069-0800-48ed-aec2-db9377905ec5",
+			"name": "Получение API  ключа invalid_email",
+			"url": "https://petfriends.skillfactory.ru/api/key",
+			"time": 86,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				86
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "a09d7172-c6ac-4e5c-ac80-e0ba0dba11e0",
+			"name": "Получение API  ключа invalid_password",
+			"url": "https://petfriends.skillfactory.ru/api/key",
+			"time": 45,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				45
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "310082e5-bfe0-4630-8f3b-2ec7e3324adc",
+			"name": "Получение API  ключа invalid_email, invalid_password",
+			"url": "https://petfriends.skillfactory.ru/api/key",
+			"time": 42,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				42
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "e7452e0f-a92a-450c-8d06-dfeaafa54d42",
+			"name": "Сохранение API  ключа",
+			"url": "https://petfriends.skillfactory.ru/api/key",
+			"time": 41,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Запись ключа в переменную": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Запись ключа в переменную": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				41
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Запись ключа в переменную": true
+				}
+			]
+		},
+		{
+			"id": "121629f4-81a7-4aa4-9813-49c77e9333e7",
+			"name": "Добавление питомца (invalid_name)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 148,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				148
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "93d8af54-a11f-4fc1-91eb-df39815b5848",
+			"name": "Добавление питомца (no_name)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 95,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				95
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "448cb19c-977b-42e3-b9e5-3c7e4f7a553d",
+			"name": "Добавление питомца (invalid_type)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 95,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				95
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "004851ff-df30-4077-8300-cc2098579392",
+			"name": "Добавление питомца (no_type)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 86,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				86
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "5b946ec6-85ec-416f-bea3-dfc2f52f8d09",
+			"name": "Добавление питомца (invalid_age)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 84,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				84
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "736a009b-ab68-41c2-bb36-87f9351df360",
+			"name": "Добавление питомца (no_age)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 88,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				88
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "384751dd-eeab-457e-8572-3901e367092b",
+			"name": "Добавление питомца (invalid_photo)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 80,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				80
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "76bf5fff-dfb8-4f85-babd-9f0b563eecc2",
+			"name": "Добавление питомца (no_photo)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 24,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				24
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "11853f70-30fd-4fc5-bb98-b4b63a221d74",
+			"name": "Добавление питомца б/ф (invalid_name)",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 50,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				50
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "db67dfe9-d95a-47b9-8114-5df2e70fdd61",
+			"name": "Добавление питомца б/ф (no_name)",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 68,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				68
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "7e96f17f-8650-4c4f-adce-41e82f93f9f6",
+			"name": "Добавление питомца б/ф (invalid_type)",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 52,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				52
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "fc8b05e1-183e-427a-8537-0c56530a964b",
+			"name": "Добавление питомца б/ф (no_type)",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 49,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				49
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "d1b60895-e3da-4a02-9e46-fbde7f93e4b2",
+			"name": "Добавление питомца б/ф (invalid_age)",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 51,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				51
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "860c4ed0-2acb-4153-8c5b-0ffb7e29e110",
+			"name": "Добавление питомца б/ф (no_age)",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 49,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				49
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "0640d862-6d9d-4ee3-97a1-f4586930703f",
+			"name": "Сохранение id питомца б/ф",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 48,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Сохранение pet_id в переменной": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Сохранение pet_id в переменной": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				48
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Сохранение pet_id в переменной": true
+				}
+			]
+		},
+		{
+			"id": "fe6a656f-128e-4197-8eb5-943d50b332aa",
+			"name": "Добавление фото (invalid_id)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/set_photo/12345678901",
+			"time": 145,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				145
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "137b58de-f6c8-428b-bf95-9c21e17f2abf",
+			"name": "Добавление фото (no_id)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/set_photo/:pet_id",
+			"time": 150,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				150
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "414a0e7b-9e8e-494b-bca2-64a8fb2730c6",
+			"name": "Добавление фото (invalid_photo)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/set_photo/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 54,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				54
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "076a2e2c-5167-4bab-9e50-f9c5469018f3",
+			"name": "Добавление фото (no_photo)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/set_photo/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 24,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				24
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "39d1918e-a352-405f-8bea-8995d688160c",
+			"name": "Изменение имени (invalid_id)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/12345678901",
+			"time": 119,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				119
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "85aef9fd-b022-4846-86c0-c23ba6953da3",
+			"name": "Изменение имени (no_id)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/:pet_id",
+			"time": 140,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				140
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "67003189-1815-4555-8b7f-6f1a295c9e95",
+			"name": "Изменение имени (invalid_name)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 179,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				179
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "b0f40562-955d-492e-92cd-545e9ce31dcb",
+			"name": "Изменение имени (invalid_type)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 190,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				190
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "5c2227c6-8d41-4c57-a2d4-bb3f12d97676",
+			"name": "Изменение имени (invalid_age)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 175,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				175
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "182eba60-f01c-4973-8797-cbafbb44d197",
+			"name": "Получение общего списка pets (invalid_key)",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=",
+			"time": 40,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "d5e683f3-0ae0-45b1-b9de-fc6a1ecf9aa1",
+			"name": "Получение списка pets пользователя (invalid_key)",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=my_pets",
+			"time": 41,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				41
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "cd8756ac-a6ca-4003-af2d-7cefe8c60edb",
+			"name": "Добавление нового pet (invalid_key)",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 77,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "64b537a7-444f-42fb-9a9c-c31aecc3af13",
+			"name": "Добавление нового pet без фото (invalid_key)",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 40,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "5a4258c5-a06c-44a8-86f2-90c4ccc57845",
+			"name": "Добавление фото pet (invalid_key)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/set_photo/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 79,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				79
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "059d202a-9291-415b-8603-d81ad3c62b03",
+			"name": "Изменение имени pet (invalid_key)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 42,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				42
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "e93daf3c-8878-4ad4-9add-7c9968664889",
+			"name": "Удаление pet (invalid_key)",
+			"url": "https://petfriends.skillfactory.ru/api/pets/8f7e687a-cb7a-4e36-8622-59aedf873a0a",
+			"time": 38,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				38
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2814,
+	"collection": {
+		"requests": [
+			{
+				"id": "d18bb069-0800-48ed-aec2-db9377905ec5",
+				"method": "GET"
+			},
+			{
+				"id": "a09d7172-c6ac-4e5c-ac80-e0ba0dba11e0",
+				"method": "GET"
+			},
+			{
+				"id": "310082e5-bfe0-4630-8f3b-2ec7e3324adc",
+				"method": "GET"
+			},
+			{
+				"id": "e7452e0f-a92a-450c-8d06-dfeaafa54d42",
+				"method": "GET"
+			},
+			{
+				"id": "121629f4-81a7-4aa4-9813-49c77e9333e7",
+				"method": "POST"
+			},
+			{
+				"id": "93d8af54-a11f-4fc1-91eb-df39815b5848",
+				"method": "POST"
+			},
+			{
+				"id": "448cb19c-977b-42e3-b9e5-3c7e4f7a553d",
+				"method": "POST"
+			},
+			{
+				"id": "004851ff-df30-4077-8300-cc2098579392",
+				"method": "POST"
+			},
+			{
+				"id": "5b946ec6-85ec-416f-bea3-dfc2f52f8d09",
+				"method": "POST"
+			},
+			{
+				"id": "736a009b-ab68-41c2-bb36-87f9351df360",
+				"method": "POST"
+			},
+			{
+				"id": "384751dd-eeab-457e-8572-3901e367092b",
+				"method": "POST"
+			},
+			{
+				"id": "76bf5fff-dfb8-4f85-babd-9f0b563eecc2",
+				"method": "POST"
+			},
+			{
+				"id": "11853f70-30fd-4fc5-bb98-b4b63a221d74",
+				"method": "POST"
+			},
+			{
+				"id": "db67dfe9-d95a-47b9-8114-5df2e70fdd61",
+				"method": "POST"
+			},
+			{
+				"id": "7e96f17f-8650-4c4f-adce-41e82f93f9f6",
+				"method": "POST"
+			},
+			{
+				"id": "fc8b05e1-183e-427a-8537-0c56530a964b",
+				"method": "POST"
+			},
+			{
+				"id": "d1b60895-e3da-4a02-9e46-fbde7f93e4b2",
+				"method": "POST"
+			},
+			{
+				"id": "860c4ed0-2acb-4153-8c5b-0ffb7e29e110",
+				"method": "POST"
+			},
+			{
+				"id": "0640d862-6d9d-4ee3-97a1-f4586930703f",
+				"method": "POST"
+			},
+			{
+				"id": "fe6a656f-128e-4197-8eb5-943d50b332aa",
+				"method": "POST"
+			},
+			{
+				"id": "137b58de-f6c8-428b-bf95-9c21e17f2abf",
+				"method": "POST"
+			},
+			{
+				"id": "414a0e7b-9e8e-494b-bca2-64a8fb2730c6",
+				"method": "POST"
+			},
+			{
+				"id": "076a2e2c-5167-4bab-9e50-f9c5469018f3",
+				"method": "POST"
+			},
+			{
+				"id": "39d1918e-a352-405f-8bea-8995d688160c",
+				"method": "PUT"
+			},
+			{
+				"id": "85aef9fd-b022-4846-86c0-c23ba6953da3",
+				"method": "PUT"
+			},
+			{
+				"id": "67003189-1815-4555-8b7f-6f1a295c9e95",
+				"method": "PUT"
+			},
+			{
+				"id": "b0f40562-955d-492e-92cd-545e9ce31dcb",
+				"method": "PUT"
+			},
+			{
+				"id": "5c2227c6-8d41-4c57-a2d4-bb3f12d97676",
+				"method": "PUT"
+			},
+			{
+				"id": "182eba60-f01c-4973-8797-cbafbb44d197",
+				"method": "GET"
+			},
+			{
+				"id": "d5e683f3-0ae0-45b1-b9de-fc6a1ecf9aa1",
+				"method": "GET"
+			},
+			{
+				"id": "cd8756ac-a6ca-4003-af2d-7cefe8c60edb",
+				"method": "POST"
+			},
+			{
+				"id": "64b537a7-444f-42fb-9a9c-c31aecc3af13",
+				"method": "POST"
+			},
+			{
+				"id": "5a4258c5-a06c-44a8-86f2-90c4ccc57845",
+				"method": "POST"
+			},
+			{
+				"id": "059d202a-9291-415b-8603-d81ad3c62b03",
+				"method": "PUT"
+			},
+			{
+				"id": "e93daf3c-8878-4ad4-9add-7c9968664889",
+				"method": "DELETE"
+			}
+		]
+	}
+}

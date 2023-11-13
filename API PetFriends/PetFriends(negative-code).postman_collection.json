@@ -1,0 +1,1713 @@
+{
+	"info": {
+		"_postman_id": "b6588aac-9e61-4f81-b5d4-59439436a8f4",
+		"name": "PetFriends(negative-code)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24878696"
+	},
+	"item": [
+		{
+			"name": "Получение ключа - GET/api/key",
+			"item": [
+				{
+					"name": "Получение API  ключа invalid_email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "{{invalid_email}}",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "{{valid_password}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/key",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение API  ключа invalid_password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "{{valid_email}}",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "{{invalid_password}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/key",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение API  ключа invalid_email, invalid_password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "{{invalid_email}}",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "{{invalid_password}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/key",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Сохранение API  ключа",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Запись ключа в переменную\", function () {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    pm.collectionVariables.set(\"auth_key\", jsonData.key)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "{{valid_email}}",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "{{valid_password}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/key",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"key"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление pet - POST /api/pets",
+			"item": [
+				{
+					"name": "Добавление питомца (invalid_name)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{invalid_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца (no_name)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца (invalid_type)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{invalid_type}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца (no_type)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца (invalid_age)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{invalid_age}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца (no_age)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца (invalid_photo)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster2.gif"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца (no_photo)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Добавление pet без фото - POST /api/create_pet_simple",
+			"item": [
+				{
+					"name": "Добавление питомца б/ф (invalid_name)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{invalid_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца б/ф (no_name)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца б/ф (invalid_type)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{invalid_type}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца б/ф (no_type)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца б/ф (invalid_age)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{invalid_age}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление питомца б/ф (no_age)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Сохранение id питомца б/ф",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Сохранение pet_id в переменной\", function () {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    pm.collectionVariables.set(\"pet_id\", jsonData.id)\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Добавление фото - POST /api/pets/set_photo/{pet_id}",
+			"item": [
+				{
+					"name": "Добавление фото (invalid_id)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/set_photo/{{invalid_petId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"set_photo",
+								"{{invalid_petId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление фото (no_id)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/set_photo/:pet_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"set_photo",
+								":pet_id"
+							],
+							"variable": [
+								{
+									"key": "pet_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление фото (invalid_photo)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster2.gif"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/set_photo/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"set_photo",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление фото (no_photo)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/set_photo/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"set_photo",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Обновление информации pet - PUT /api/pets/{pet_id}",
+			"item": [
+				{
+					"name": "Изменение имени (invalid_id)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_new_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/{{invalid_petId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{invalid_petId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение имени (no_id)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_new_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/:pet_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								":pet_id"
+							],
+							"variable": [
+								{
+									"key": "pet_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение имени (invalid_name)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{invalid_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение имени (invalid_type)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_new_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{invalid_type}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение имени (invalid_age)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_new_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{invalid_age}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Запросы с некорректным API key",
+			"item": [
+				{
+					"name": "Получение общего списка pets (invalid_key)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pets?filter=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение списка pets пользователя (invalid_key)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pets?filter=my_pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "my_pets"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление нового pet (invalid_key)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "parrot-t.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление нового pet без фото (invalid_key)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_pet_simple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_pet_simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление фото pet (invalid_key)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pet_photo",
+									"type": "file",
+									"src": "hamster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/set_photo/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"set_photo",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение имени pet (invalid_key)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{pet_new_name}}",
+									"type": "text"
+								},
+								{
+									"key": "animal_type",
+									"value": "{{type_pet}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "{{age_pet}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pets/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление pet (invalid_key)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pets/{{pet_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{pet_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{invalid_key}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "auth_key",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{auth_key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "auth_key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://petfriends.skillfactory.ru",
+			"type": "string"
+		},
+		{
+			"key": "auth_key",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "valid_email",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "valid_password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "pet_name",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "pet_new_name",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "pet_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "type_pet",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "age_pet",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "invalid_key",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "invalid_email",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "invalid_password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "invalid_petId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "invalid_name",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "invalid_type",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "invalid_age",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
