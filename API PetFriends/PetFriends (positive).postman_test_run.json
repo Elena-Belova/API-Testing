@@ -1,0 +1,588 @@
+{
+	"id": "602700eb-8430-4f2e-9cd7-6ab970397a16",
+	"name": "PetFriends (positive)",
+	"timestamp": "2023-11-13T13:13:59.912Z",
+	"collection_id": "24878696-6ef0a421-ae38-4fc3-9b17-80cc598c15eb",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 36,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-11-13T13:13:55.456Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a776561c-8f13-4ec7-8505-3d34512e2e5d",
+			"name": "Получение API  ключа",
+			"url": "https://petfriends.skillfactory.ru/api/key",
+			"time": 45,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type имеет значение application/json": true,
+				"Наличие ключа, запись ключа в переменную": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type имеет значение application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Наличие ключа, запись ключа в переменную": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				45
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type имеет значение application/json": true,
+					"Наличие ключа, запись ключа в переменную": true
+				}
+			]
+		},
+		{
+			"id": "6cb93564-b06d-4d5c-b5e1-35956b1538f8",
+			"name": "Получение общего списка pets",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=",
+			"time": 627,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type имеет значение application/json": true,
+				"Количество питомцев в списке >2": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type имеет значение application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Количество питомцев в списке >2": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				627
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type имеет значение application/json": true,
+					"Количество питомцев в списке >2": true
+				}
+			]
+		},
+		{
+			"id": "78f690eb-375f-40f9-9217-c49fdb7c5319",
+			"name": "Получение списка pets пользователя",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=my_pets",
+			"time": 135,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type имеет значение application/json": true,
+				"Питомцы в списке принадлежат пользователю": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type имеет значение application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Питомцы в списке принадлежат пользователю": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				135
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type имеет значение application/json": true,
+					"Питомцы в списке принадлежат пользователю": true
+				}
+			]
+		},
+		{
+			"id": "1321f912-4415-4ca1-93da-a9d403e5154f",
+			"name": "Добавление нового pet3",
+			"url": "https://petfriends.skillfactory.ru/api/pets",
+			"time": 85,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type имеет значение application/json": true,
+				"В ответе информация о добавленном питомце": true,
+				"Запись id в переменную": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type имеет значение application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"В ответе информация о добавленном питомце": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Запись id в переменную": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type имеет значение application/json": true,
+					"В ответе информация о добавленном питомце": true,
+					"Запись id в переменную": true
+				}
+			]
+		},
+		{
+			"id": "b18f5bc1-7a78-426a-8c0c-4bac2acbcb45",
+			"name": "Проверка, что pet3 добавлен",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=my_pets",
+			"time": 157,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Проверка, что новый pet3 добавлен": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка, что новый pet3 добавлен": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				157
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Проверка, что новый pet3 добавлен": true
+				}
+			]
+		},
+		{
+			"id": "4b562a91-1db5-4497-8dd1-17d9124b70d4",
+			"name": "Добавление нового pet4 без фото",
+			"url": "https://petfriends.skillfactory.ru/api/create_pet_simple",
+			"time": 51,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type имеет значение application/json": true,
+				"В ответе информация о добавленном питомце": true,
+				"Запись id в переменную": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type имеет значение application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"В ответе информация о добавленном питомце": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Запись id в переменную": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				51
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type имеет значение application/json": true,
+					"В ответе информация о добавленном питомце": true,
+					"Запись id в переменную": true
+				}
+			]
+		},
+		{
+			"id": "475a6497-cdbe-4a4a-af8d-b6927c90928a",
+			"name": "Проверка, что pet4 добавлен",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=my_pets",
+			"time": 136,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Проверка, что новый pet4 добавлен": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка, что новый pet4 добавлен": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				136
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Проверка, что новый pet4 добавлен": true
+				}
+			]
+		},
+		{
+			"id": "2d94dd91-3a2b-4fa1-b89a-6a852a2b5bc2",
+			"name": "Добавление фото pet4",
+			"url": "https://petfriends.skillfactory.ru/api/pets/set_photo/0ceec6e0-00d0-4948-9856-7321409300c4",
+			"time": 219,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type имеет значение application/json": true,
+				"В ответе информация о добавленном фото": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type имеет значение application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"В ответе информация о добавленном фото": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				219
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type имеет значение application/json": true,
+					"В ответе информация о добавленном фото": true
+				}
+			]
+		},
+		{
+			"id": "4b2d2232-27c8-4c07-8e4b-bd2869fb6276",
+			"name": "Изменение имени pet4",
+			"url": "https://petfriends.skillfactory.ru/api/pets/0ceec6e0-00d0-4948-9856-7321409300c4",
+			"time": 192,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type имеет значение application/json": true,
+				"В ответе новое имя питомца": true,
+				"Запись нового имени в переменную": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type имеет значение application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"В ответе новое имя питомца": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Запись нового имени в переменную": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				192
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type имеет значение application/json": true,
+					"В ответе новое имя питомца": true,
+					"Запись нового имени в переменную": true
+				}
+			]
+		},
+		{
+			"id": "18d4685d-811c-4594-bb3c-f36fb90b201a",
+			"name": "Проверка, что pet4 изменен",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=my_pets",
+			"time": 154,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Проверка, что pet4 изменен": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка, что pet4 изменен": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				154
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Проверка, что pet4 изменен": true
+				}
+			]
+		},
+		{
+			"id": "f1a6cb83-2f33-4a06-8af5-f44d04b4a8fb",
+			"name": "Удаление pet4",
+			"url": "https://petfriends.skillfactory.ru/api/pets/0ceec6e0-00d0-4948-9856-7321409300c4",
+			"time": 114,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				114
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "71fab015-b0c9-4017-901e-37ae01f3d8f9",
+			"name": "Проверка, что pet4 удален",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=my_pets",
+			"time": 151,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Проверка, что pet4 удален": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка, что pet4 удален": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				151
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Проверка, что pet4 удален": true
+				}
+			]
+		},
+		{
+			"id": "e9b45436-e1dd-4d78-8da8-54ff0019a33f",
+			"name": "Удаление pet3",
+			"url": "https://petfriends.skillfactory.ru/api/pets/427455d0-bfef-4009-b6fb-7a9daa06a4a6",
+			"time": 111,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				111
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "9f26725b-71c2-468e-b7fb-acab6d5bbce8",
+			"name": "Проверка, что pet3 удален",
+			"url": "https://petfriends.skillfactory.ru/api/pets?filter=my_pets",
+			"time": 134,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Проверка, что pet4 удален": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка, что pet4 удален": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				134
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Проверка, что pet4 удален": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2311,
+	"collection": {
+		"requests": [
+			{
+				"id": "a776561c-8f13-4ec7-8505-3d34512e2e5d",
+				"method": "GET"
+			},
+			{
+				"id": "6cb93564-b06d-4d5c-b5e1-35956b1538f8",
+				"method": "GET"
+			},
+			{
+				"id": "78f690eb-375f-40f9-9217-c49fdb7c5319",
+				"method": "GET"
+			},
+			{
+				"id": "1321f912-4415-4ca1-93da-a9d403e5154f",
+				"method": "POST"
+			},
+			{
+				"id": "b18f5bc1-7a78-426a-8c0c-4bac2acbcb45",
+				"method": "GET"
+			},
+			{
+				"id": "4b562a91-1db5-4497-8dd1-17d9124b70d4",
+				"method": "POST"
+			},
+			{
+				"id": "475a6497-cdbe-4a4a-af8d-b6927c90928a",
+				"method": "GET"
+			},
+			{
+				"id": "2d94dd91-3a2b-4fa1-b89a-6a852a2b5bc2",
+				"method": "POST"
+			},
+			{
+				"id": "4b2d2232-27c8-4c07-8e4b-bd2869fb6276",
+				"method": "PUT"
+			},
+			{
+				"id": "18d4685d-811c-4594-bb3c-f36fb90b201a",
+				"method": "GET"
+			},
+			{
+				"id": "f1a6cb83-2f33-4a06-8af5-f44d04b4a8fb",
+				"method": "DELETE"
+			},
+			{
+				"id": "71fab015-b0c9-4017-901e-37ae01f3d8f9",
+				"method": "GET"
+			},
+			{
+				"id": "e9b45436-e1dd-4d78-8da8-54ff0019a33f",
+				"method": "DELETE"
+			},
+			{
+				"id": "9f26725b-71c2-468e-b7fb-acab6d5bbce8",
+				"method": "GET"
+			}
+		]
+	}
+}
