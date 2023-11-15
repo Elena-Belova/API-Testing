@@ -29,9 +29,9 @@
 
 &#8594; [Test-run "PetFriends-negative-code"(JSON)](https://github.com/Elena-Belova/API-Testing/blob/06c137fbbb789a5c100fc4c3f64b84ac1323fa65/API%20PetFriends/PetFriends(negative-code).postman_test_run.json)
 
-&#8594; [Чек-лист - позитивное тестирование API PetFriends]()
+&#8594; [Чек-лист - позитивное тестирование API PetFriends](https://github.com/Elena-Belova/API-Testing/blob/587dccd794eec931fbe57714ddbc388f09e30f95/API%20PetFriends/1%20%D0%A7%D0%B5%D0%BA-%D0%BB%D0%B8%D1%81%D1%82%20PetFriends%20API.pdf)
 
-&#8594; [Чек-лист - негативное тестирование API PetFriends]() - проверка ожидаемых кодов ответа при отправке некорректных значений
+&#8594; [Чек-лист - негативное тестирование API PetFriends](https://github.com/Elena-Belova/API-Testing/blob/587dccd794eec931fbe57714ddbc388f09e30f95/API%20PetFriends/2%20%D0%A7%D0%B5%D0%BA-%D0%BB%D0%B8%D1%81%D1%82%20PetFriends%20API.pdf) - проверка ожидаемых кодов ответа при отправке некорректных значений
 
 :small_orange_diamond:запросы составлены с использованием ***Swagger***
 <hr>
