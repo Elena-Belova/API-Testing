@@ -10,6 +10,15 @@
 :small_orange_diamond:выявление и оформление обнаруженных дефектов<br>
 <hr>
 
+:eight_pointed_black_star: **API Petstore**<br>
+тестирование создания нового пользователя на ресурсе<br>
+данная работа выполнялась, чтобы попрактиковаться в написании тестовых скриптов и работе с консолью Postman
+
+&#8594; [Коллекция Postman "Petstore"(JSON)](https://github.com/Elena-Belova/API-Testing/blob/1f1dc60a44213dc75caa30d7fca10fcde4558919/API%20Petstore.postman_collection.json)
+
+:small_orange_diamond:запросы составлены с использованием ***Swagger***
+<hr>
+
 :eight_pointed_black_star: **API PetFriends**
 
 &#8594; [Коллекция Postman "PetFriends-positive"(JSON)](https://github.com/Elena-Belova/API-Testing/blob/06c137fbbb789a5c100fc4c3f64b84ac1323fa65/API%20PetFriends/PetFriends%20(positive).postman_collection.json)
@@ -25,11 +34,6 @@
 &#8594; [Чек-лист - негативное тестирование API PetFriends]() - проверка ожидаемых кодов ответа при отправке некорректных значений
 
 :small_orange_diamond:запросы составлены с использованием ***Swagger***
-<hr>
-
-:eight_pointed_black_star: **API ?**
-
-
 <hr>
 
 :eight_pointed_black_star: **API Дом Питомца**
