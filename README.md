@@ -14,7 +14,7 @@
 тестирование создания нового пользователя на ресурсе<br>
 данная работа выполнялась, чтобы попрактиковаться в написании тестовых скриптов и работе с консолью Postman
 
-&#8594; [Коллекция Postman "Petstore"(JSON)](https://github.com/Elena-Belova/API-Testing/blob/1f1dc60a44213dc75caa30d7fca10fcde4558919/API%20Petstore.postman_collection.json)
+&#8594; [Коллекция Postman "Petstore"(JSON)](https://github.com/Elena-Belova/API-Testing/blob/b1bb246cb43579a42037951a1d7d9bb32eddb689/API%20Petstore.postman_collection.json)
 
 :small_orange_diamond:запросы составлены с использованием ***Swagger***
 <hr>
